@@ -5,16 +5,20 @@ body {
     min-height: 100vh;
     background-color: #838383;
     margin: 0;
+    padding: 15px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 800px;
 }
 
 .book-container {
-    width: 800px;
+    width: 100%;
+    max-width: 800px;
     height: 500px;
     perspective: 1500px;
     margin-bottom: 20px;
@@ -59,7 +63,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .author-name {
@@ -77,6 +81,8 @@ body {
     text-align: center;
     color: #007BFF;
     cursor: pointer;
+    width: 100%;
+    max-width: 300px;
 }
 
 .music-player i {
@@ -102,4 +108,61 @@ body {
     font-weight: bold;
     text-align: center;
     padding: 20px;
+}
+
+/* Media Queries for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .book-container {
+        height: 400px;
+    }
+
+    .page img {
+        max-width: 95%;
+        max-height: 85%;
+    }
+
+    #lyrics-container {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .author-name {
+        font-size: 12px;
+        padding: 3px;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .music-player i {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .book-container {
+        height: 300px;
+    }
+
+    .page img {
+        max-width: 98%;
+        max-height: 88%;
+    }
+
+    #lyrics-container {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .author-name {
+        font-size: 10px;
+        padding: 2px;
+    }
+
+    .music-player i {
+        font-size: 40px;
+    }
+
+    #song-duration {
+        font-size: 14px;
+    }
 }
